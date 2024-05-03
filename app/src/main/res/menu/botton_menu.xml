@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/bottom_home"
+        android:icon="@drawable/goal"
+        android:title="Home"/>
+    <item
+        android:id="@+id/bottom_EntryList"
+        android:icon="@drawable/line_list"
+        android:title="EntryList"/>
+    <item
+        android:id="@+id/bottom_AddEntry"
+        android:icon="@drawable/add"
+        android:title="EntryAdd"/>
+    <item
+        android:id="@+id/bottom_Goal"
+        android:icon="@drawable/goal"
+        android:title="Report"/>
+
+</menu>

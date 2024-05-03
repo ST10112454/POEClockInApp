@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/background"
+    android:gravity="center"
+    android:padding="16dp"
+    tools:context=".LogIn">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:orientation="vertical">
+
+
+        <!-- App Icon -->
+
+        <ImageView
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:src="@drawable/logo"
+            />
+
+        <!-- Username input box -->
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="92dp"
+            android:hint="Username"
+            android:textColor="@color/white"
+            android:textColorHint="@color/white"
+            android:textSize="20sp"
+            android:background="@drawable/round_corner"
+            android:padding="18dp"
+            android:inputType="text"
+            android:id="@+id/username_input"
+            />
+
+
+        <!-- Password input box -->
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:hint="Password"
+            android:textColor="@color/white"
+            android:textColorHint="@color/white"
+            android:textSize="20sp"
+            android:background="@drawable/round_corner"
+            android:padding="18dp"
+            android:inputType="textPassword"
+            android:id="@+id/password_input"
+            />
+
+        <!-- Login Button = sends to home page -->
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Login"
+            android:textStyle="bold"
+            android:backgroundTint="#003465"
+            android:textColor="@color/white"
+            android:padding="18dp"
+            android:layout_marginTop="32dp"
+            android:textSize="20sp"
+            android:id="@+id/login_btn"
+            />
+
+        <!-- Text link to send you to Register page-->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Dont have an account ? Register"
+            android:textSize="18sp"
+            android:textColor="@color/white"
+            android:layout_marginTop="32dp"
+
+            />
+
+
+        <!-- Group app LOGO -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="ClockIn"
+            android:textSize="68sp"
+            android:textColor="@color/white"
+            android:layout_marginTop="32dp"
+            android:fontFamily="monospace"
+            />
+
+
+    </LinearLayout>
+</RelativeLayout>
