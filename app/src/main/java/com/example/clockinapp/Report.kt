@@ -7,6 +7,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import androidx.lifecycle.ViewModelProvider
+import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.clockinapp.databinding.ActivityReportBinding
 import com.example.clockinapp.databinding.FragmentNewTaskSheetBinding
 import com.google.android.material.bottomnavigation.BottomNavigationView
@@ -27,6 +28,7 @@ class Report : AppCompatActivity() {
         binding.newTaskButton.setOnClickListener{
             NewTaskSheet(null).show(supportFragmentManager, "newTaskTag")
         }
+        setRecyclerView()
         //Navigation
         val bottomNavigationView: BottomNavigationView = findViewById(R.id.bottomNavigationView)
         bottomNavigationView.selectedItemId = R.id.bottom_Goal
@@ -55,6 +57,16 @@ class Report : AppCompatActivity() {
             val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
             insets
+        }
+    }
+
+    private fun setRecyclerView() {
+        val mainActivity = this
+        taskViewModel.taskItems.observe(this){
+            binding.todoListRecyclerView.apply {
+                layoutManager = LinearLayoutManager(applicationContext)
+                adapter = TaskItemAdapter(it)
+            }
         }
     }
 }
