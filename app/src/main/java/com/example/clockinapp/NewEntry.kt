@@ -62,7 +62,7 @@ class NewEntry : AppCompatActivity() , TaskItemClickListener {
             insets
         }
     }
-
+//
     private fun setRecyclerView() {
         val mainActivity = this
         taskViewModel.taskItems.observe(this){
