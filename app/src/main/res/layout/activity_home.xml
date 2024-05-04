@@ -48,9 +48,10 @@
         </LinearLayout>
 
         <!-- nNavigation-->
-
-        <com.google.android.material.floatingactionbutton.FloatingActionButton
+        <Button
             android:id="@+id/addingBtn"
+            android:text="add button"
+            android:textColor="@color/DarkBlue"
             android:layout_width="213dp"
             android:layout_height="140dp"
             android:layout_alignParentStart="true"
@@ -62,7 +63,23 @@
             android:layout_marginEnd="27dp"
             android:layout_marginBottom="93dp"
             android:src="@drawable/add"
-            app:backgroundTint="@color/white" />
+            app:backgroundTint="@color/white"/>
+        <!--
+                <com.google.android.material.floatingactionbutton.FloatingActionButton
+                    android:id="@+id/addingBtn"
+                    android:layout_width="213dp"
+                    android:layout_height="140dp"
+                    android:layout_alignParentStart="true"
+                    android:layout_alignParentTop="true"
+                    android:layout_alignParentEnd="true"
+                    android:layout_alignParentBottom="true"
+                    android:layout_marginStart="228dp"
+                    android:layout_marginTop="417dp"
+                    android:layout_marginEnd="27dp"
+                    android:layout_marginBottom="93dp"
+                    android:src="@drawable/add"
+                    app:backgroundTint="@color/white" />
+                -->
 
         <com.google.android.material.bottomnavigation.BottomNavigationView
             android:id="@+id/bottomNavigationView"

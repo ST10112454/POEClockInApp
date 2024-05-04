@@ -4,22 +4,17 @@ import android.annotation.SuppressLint
 import android.app.DatePickerDialog
 import android.app.TimePickerDialog
 import android.content.Intent
-import android.graphics.Color
-import android.graphics.drawable.ColorDrawable
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
-import android.view.ViewDebug.FlagToString
 import android.widget.Button
-import android.widget.DatePicker
 import android.widget.EditText
 import android.widget.ImageView
-import android.widget.TimePicker
+import android.widget.TextView
 import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
-import androidx.constraintlayout.widget.ConstraintSet.Layout
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -28,32 +23,20 @@ import com.example.clockinapp.model.UserData
 import com.example.clockinapp.view.UserAdapter
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.google.android.material.floatingactionbutton.FloatingActionButton
-import java.time.DayOfWeek
-import java.util.Calendar
+class Home : AppCompatActivity() {
 
-class Home : AppCompatActivity(), DatePickerDialog.OnDateSetListener, TimePickerDialog.OnTimeSetListener {
 
+
+    //private lateinit var addsBtn:Button
+    //private lateinit var addingBtn: Button
     private lateinit var addsBtn:FloatingActionButton
     private lateinit var recv:RecyclerView
     private lateinit var userList: ArrayList<UserData>
     private lateinit var userAdapter: UserAdapter
     private lateinit var imageView: ImageView
-    private lateinit var button: FloatingActionButton
 
-
-    var day =0
-    var month =0
-    var year =0
-    var hour =0
-    var minute =0
-
-    var saveDay =0
-    var saveMonth =0
-    var saveYear =0
-    var saveHour =0
-    var saveMinute =0
-
-
+    private lateinit var textView: TextView
+    private lateinit var button: Button
 
     @SuppressLint("MissingInflatedId")
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -63,7 +46,17 @@ class Home : AppCompatActivity(), DatePickerDialog.OnDateSetListener, TimePicker
         //Home page
 
 // ------------------------date picker
-        pickDate()
+    /*
+        textView = findViewById(R.id.text);
+        button = findViewById(R.id.button);
+
+        button.setOnClickListener {
+            openDatePicker() // Open date picker dialog
+            //openTimePicker() // Open time picker dialog
+        }
+
+*/
+
 // ------------------------Pick Image
 
     /*
@@ -89,10 +82,17 @@ class Home : AppCompatActivity(), DatePickerDialog.OnDateSetListener, TimePicker
         recv =findViewById(R.id.mRecycler)
         //set Adapter
         userAdapter = UserAdapter(this,userList)
-        //setRecycler view adapter
+        //setRecycler view adapter//
         recv.layoutManager = LinearLayoutManager(this)
         recv.adapter = userAdapter
         //set dialog
+        /*
+        addingBtn.setOnClickListener {
+            val intent = Intent(this, AddItem::class.java)
+            startActivity(intent)
+        }
+        */
+
         addsBtn.setOnClickListener{ addInfo()}
 
         //NAVIGATION
@@ -127,10 +127,38 @@ class Home : AppCompatActivity(), DatePickerDialog.OnDateSetListener, TimePicker
         }
     }
 
-    private fun pickDate() {
-
-        //btn_timePicker.setOnClickListener{}
+    private fun openTimePicker() {
+        val timePickerDialog = TimePickerDialog(
+            this,
+            android.R.style.Theme_DeviceDefault_Dialog,
+            TimePickerDialog.OnTimeSetListener { _, hour, minute ->
+                // Showing the picked value in the textView
+                textView.text = "$hour:$minute"
+            },
+            15,
+            30,
+            false
+        )
+        timePickerDialog.show()
     }
+
+    private fun openDatePicker() {
+        val datePickerDialog = DatePickerDialog(
+            this,
+            android.R.style.Theme_DeviceDefault_Dialog,
+            DatePickerDialog.OnDateSetListener { _, year, month, day ->
+                // Showing the picked value in the textView
+                textView.text = "$year.${month + 1}.$day"
+                openTimePicker()
+            },
+            2023,
+            1,
+            20
+        )
+
+        datePickerDialog.show()
+    }
+
 
     private fun addInfo() {
         val inflter = LayoutInflater.from(this )
@@ -160,26 +188,13 @@ class Home : AppCompatActivity(), DatePickerDialog.OnDateSetListener, TimePicker
         addDiaglog.show()
 
     }
-    private fun getDateTimeCalander(){
-        val cal = Calendar.getInstance()
-        day  = cal.get(Calendar.DAY_OF_MONTH)
-        month  = cal.get(Calendar.MONTH)
-        year  = cal.get(Calendar.YEAR)
-        hour  = cal.get(Calendar.HOUR)
-        minute  = cal.get(Calendar.MINUTE)
 
-    }
 
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
         super.onActivityResult(requestCode, resultCode, data)
         imageView.setImageURI(data?.data)
     }
 
-    override fun onDateSet(view: DatePicker?, year: Int, month: Int, dayOfMonth: Int) {
-        TODO("Not yet implemented")
-    }
-
-    override fun onTimeSet(view: TimePicker?, hourOfDay: Int, minute: Int) {
-        TODO("Not yet implemented")
-    }
 }
+
+
