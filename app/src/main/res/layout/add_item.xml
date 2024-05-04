@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
     android:orientation="vertical"
     android:gravity="center"
     android:layout_margin="15dp">
@@ -20,14 +21,16 @@
             android:textStyle="bold"
             android:textSize="19sp"
             android:textColor="@color/white"
+            android:padding="15dp"
             android:background="@color/DarkBlue"
-
             android:layout_gravity="center"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"/>
         <EditText
             android:id="@+id/ProjectName"
             android:hint="Project name"
+            android:inputType="text"
+            android:padding="15dp"
             android:textColor="@color/DarkBlue"
             android:textSize="18sp"
             android:textStyle="bold"
@@ -36,43 +39,51 @@
         <EditText
             android:id="@+id/Description"
             android:hint="Description"
+            android:inputType="text"
+            android:padding="15dp"
             android:textColor="@color/DarkBlue"
             android:textSize="18sp"
             android:textStyle="bold"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"/>
         <EditText
-            android:id="@+id/Date"
-            android:hint="Date"
+            android:id="@+id/Catagory"
+            android:hint="Catagory"
+            android:inputType="text"
+            android:padding="15dp"
             android:textColor="@color/DarkBlue"
             android:textSize="18sp"
             android:textStyle="bold"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"/>
-        <EditText
-            android:id="@+id/Start"
-            android:hint="Start"
-            android:textColor="@color/DarkBlue"
-            android:textSize="18sp"
-            android:textStyle="bold"
+
+        <com.google.android.material.imageview.ShapeableImageView
+            android:id="@+id/imageView"
+            android:layout_width="300dp"
+            android:layout_height="100dp"
+            app:srcCompat="@drawable/add_a_photo_24" />
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/floatingActionButton"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"/>
-        <EditText
-            android:id="@+id/End"
-            android:hint="End"
-            android:textColor="@color/DarkBlue"
+            android:layout_height="wrap_content"
+            android:clickable="true"
+            app:srcCompat="@drawable/add_a_photo_24"
+            android:contentDescription="TODO"
+            android:focusable="true" />
+        <Button
+            android:id="@+id/btn_timePicker"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Pick time"
+            />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/tv_textTime"
+            android:layout_below="@+id/btn_timePicker"
             android:textSize="18sp"
-            android:textStyle="bold"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"/>
-        <EditText
-            android:id="@+id/Category"
-            android:hint="Category"
-            android:textColor="@color/DarkBlue"
-            android:textSize="18sp"
-            android:textStyle="bold"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"/>
+            android:textStyle="bold"/>
 
 
 

@@ -49,9 +49,12 @@ dependencies {
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
+    implementation("androidx.core:core-ktx:1.13.1")
+
+    //implementation ("com.github.dhaval2404:imagepicker:2.")
+
     implementation("androidx.core:core-splashscreen:1.0.0")
     implementation("androidx.compose.material3:material3:1.2.1")
     implementation ("com.google.android.material:material:1.2.0")
     implementation ("com.google.android.material:material:1.3.0-alpha03")
-
 }
