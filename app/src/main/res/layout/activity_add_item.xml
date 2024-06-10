@@ -6,8 +6,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:orientation="vertical"
     android:gravity="center"
-    android:layout_margin="15dp"
-    >
+    android:layout_margin="15dp">
     <LinearLayout
         android:orientation="vertical"
 
@@ -47,9 +46,10 @@
             android:textStyle="bold"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"/>
+
         <EditText
             android:id="@+id/Catagory"
-            android:hint="Catagory"
+            android:hint="Catagory enter"
             android:inputType="text"
             android:padding="15dp"
             android:textColor="@color/DarkBlue"
@@ -57,6 +57,32 @@
             android:textStyle="bold"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"/>
+        <!-- Date Picker -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:layout_marginTop="16dp">
+
+            <TextView
+                android:id="@+id/selectedDate"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Select Date"
+                android:textSize="16sp"
+                android:padding="8dp" />
+
+            <ImageButton
+                android:id="@+id/datePickerButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@android:drawable/ic_menu_my_calendar"
+                android:contentDescription="Pick a date"
+                android:background="?attr/selectableItemBackgroundBorderless" />
+
+        </LinearLayout>
 
         <com.google.android.material.imageview.ShapeableImageView
             android:id="@+id/imageView"
@@ -76,12 +102,6 @@
             android:id="@+id/text"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"/>
-
-        <Button
-            android:id="@+id/button"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Show Dialog"/>
     </LinearLayout>
 
 </LinearLayout>
