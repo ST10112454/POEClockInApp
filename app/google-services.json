@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "873969430665",
+    "project_id": "clockin-7be12",
+    "storage_bucket": "clockin-7be12.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:873969430665:android:b1ebba535a645f713ed658",
+        "android_client_info": {
+          "package_name": "com.example.clockinapp"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB4TgLL6nfS3p9k9LD6-pa0drdGSqIuGkc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
