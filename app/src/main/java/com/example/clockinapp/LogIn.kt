@@ -64,7 +64,7 @@ class LogIn : AppCompatActivity() {
                                 Toast.makeText(this@LogIn, "Login successful", Toast.LENGTH_SHORT)
                                     .show()
                                 // Redirect to Home Activity or any other activity you want
-                                startActivity(Intent(this@LogIn, Report::class.java))
+                                startActivity(Intent(this@LogIn, Home::class.java))
                                 finish()
                                 return
                             }

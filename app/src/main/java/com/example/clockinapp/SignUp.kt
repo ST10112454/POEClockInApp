@@ -69,7 +69,7 @@ class SignUp : AppCompatActivity() {
                                         binding.buttonGetStarted.visibility = View.VISIBLE
 
                                         binding.buttonGetStarted.setOnClickListener {
-                                            val intent = Intent(this, Report::class.java)
+                                            val intent = Intent(this, Home::class.java)
                                             intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
                                             startActivity(intent)
                                             finish()

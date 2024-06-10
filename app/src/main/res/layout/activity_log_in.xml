@@ -74,7 +74,7 @@
             android:id="@+id/signUpTextView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Dont have an account ? Register"
+            android:text="Don't have an account? Register"
             android:textSize="18sp"
             android:textColor="@color/white"
             android:layout_marginTop="32dp"

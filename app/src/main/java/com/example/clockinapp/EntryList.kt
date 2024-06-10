@@ -2,6 +2,7 @@ package com.example.clockinapp
 
 import android.annotation.SuppressLint
 import android.app.DatePickerDialog
+import android.app.TimePickerDialog
 import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AlertDialog
@@ -92,7 +93,7 @@ class EntryList : AppCompatActivity() {
                     true}
                 R.id.bottom_EntryList ->
                 {true}
-                R.id.bottom_AddEntry ->{startActivity(Intent(applicationContext, NewEntry::class.java))
+                R.id.bottom_AddEntry ->{startActivity(Intent(applicationContext, Graph::class.java))
                     overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left)
                     finish()
                     true}
@@ -147,6 +148,30 @@ class EntryList : AppCompatActivity() {
         val startTime = v.findViewById<EditText>(R.id.StartTime)
         val date = v.findViewById<EditText>(R.id.Date)
         val dateEditText = v.findViewById<EditText>(R.id.selectedDate)
+
+        // Set up the TimePickerDialog for start and end times
+        startTime.setOnClickListener {
+            val cal = Calendar.getInstance()
+            val timeSetListener = TimePickerDialog.OnTimeSetListener { _, hour, minute ->
+                startTime.setText(String.format("%02d:%02d", hour, minute))
+            }
+            TimePickerDialog(this, timeSetListener, cal.get(Calendar.HOUR_OF_DAY), cal.get(Calendar.MINUTE), true).show()
+        }
+        endTime.setOnClickListener {
+            val cal = Calendar.getInstance()
+            val timeSetListener = TimePickerDialog.OnTimeSetListener { _, hour, minute ->
+                endTime.setText(String.format("%02d:%02d", hour, minute))
+            }
+            TimePickerDialog(this, timeSetListener, cal.get(Calendar.HOUR_OF_DAY), cal.get(Calendar.MINUTE), true).show()
+        }
+
+        date.setOnClickListener {
+            val cal = Calendar.getInstance()
+            val dateSetListener = DatePickerDialog.OnDateSetListener { _, year, month, day ->
+                date.setText(String.format("%02d/%02d/%04d", day, month + 1, year))
+            }
+            DatePickerDialog(this, dateSetListener, cal.get(Calendar.YEAR), cal.get(Calendar.MONTH), cal.get(Calendar.DAY_OF_MONTH)).show()
+        }
 
         val addDialog = AlertDialog.Builder(this)
         addDialog.setView(v)

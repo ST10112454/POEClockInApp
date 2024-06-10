@@ -71,7 +71,7 @@ class Report : AppCompatActivity() , TaskItemClickListener {
                     overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left)
                     finish()
                     true}
-                R.id.bottom_AddEntry ->{startActivity(Intent(applicationContext, NewEntry::class.java))
+                R.id.bottom_AddEntry ->{startActivity(Intent(applicationContext, Graph::class.java))
                     overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left)
                     finish()
                     true}
